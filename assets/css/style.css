@@ -307,11 +307,13 @@ p { margin: 0; }
 
 /* ---------------- Group headings ----------------
    These label a block of work inside a section ("Gym platform",
-   "Branded client apps"). A heading that follows a card grid needs
-   real air above it, or it reads as belonging to the grid it sits
-   under rather than the one below. The first heading in a section
-   follows .section__head, which carries its own bottom margin, so
-   it is deliberately left alone. */
+   "Branded client apps"). Each one opens a new group, so it carries
+   its own break: a hairline and generous space above, matching the
+   rule that separates one section from the next. Declared on the
+   heading itself rather than on a sibling combinator — the previous
+   element varies, and a combinator that stops matching fails
+   silently. The first heading in a section is the exception: it
+   follows .section__head, which already spaces itself. */
 
 .group-title {
   font-family: "JetBrains Mono", monospace;
@@ -320,19 +322,21 @@ p { margin: 0; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--amber-dim);
-  margin: 0 0 6px;
+  margin: clamp(52px, 6.5vw, 88px) 0 8px;
+  padding-top: clamp(30px, 3.8vw, 44px);
+  border-top: 1px solid var(--line-soft);
 }
 
-.cards + .group-title,
-.arch + .group-title,
-.apps + .group-title {
-  margin-top: clamp(48px, 6vw, 82px);
+.section__head + .group-title {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .group-title + .group-note {
   color: var(--muted);
   font-size: 0.9rem;
-  margin-bottom: clamp(18px, 2.2vw, 26px);
+  margin-bottom: clamp(20px, 2.4vw, 28px);
   max-width: 60ch;
 }
 
