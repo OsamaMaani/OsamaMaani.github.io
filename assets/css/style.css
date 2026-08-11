@@ -36,6 +36,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* No text-rendering: optimizeLegibility here — it pushes Gecko onto a
+   different shaping path, which renders light-on-dark type noticeably
+   heavier than Blink does. The default is the closer match. */
 body {
   margin: 0;
   background: var(--ink);
@@ -44,7 +47,6 @@ body {
   font-size: var(--step-0);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 /* Ambient: a very quiet horizon glow, once, at the top. */
@@ -303,7 +305,14 @@ p { margin: 0; }
   padding-bottom: clamp(56px, 8vw, 100px);
 }
 
-/* Store directory — one row per shipped app, with its live listings. */
+/* ---------------- Group headings ----------------
+   These label a block of work inside a section ("Gym platform",
+   "Branded client apps"). A heading that follows a card grid needs
+   real air above it, or it reads as belonging to the grid it sits
+   under rather than the one below. The first heading in a section
+   follows .section__head, which carries its own bottom margin, so
+   it is deliberately left alone. */
+
 .group-title {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.78rem;
@@ -311,16 +320,23 @@ p { margin: 0; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--amber-dim);
-  margin: 0 0 4px;
+  margin: 0 0 6px;
 }
+
+.cards + .group-title,
+.arch + .group-title,
+.apps + .group-title {
+  margin-top: clamp(48px, 6vw, 82px);
+}
+
 .group-title + .group-note {
   color: var(--muted);
   font-size: 0.9rem;
-  margin-bottom: 6px;
+  margin-bottom: clamp(18px, 2.2vw, 26px);
   max-width: 60ch;
 }
-.apps + .group-title { margin-top: clamp(34px, 4vw, 52px); }
 
+/* Store directory — one row per shipped app, with its live listings. */
 .apps {
   list-style: none;
   margin: 0;
@@ -777,14 +793,22 @@ p { margin: 0; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--amber); }
 
-/* ---------------- Motion ---------------- */
+/* ---------------- Motion ----------------
+   will-change is set while the element is waiting to animate and
+   released once it has, so the page isn't holding a compositor
+   layer per reveal for its whole life. */
 
 .reveal {
   opacity: 0;
   transform: translateY(14px);
+  will-change: opacity, transform;
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
-.reveal.is-in { opacity: 1; transform: none; }
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
 
 .stagger > * {
   opacity: 0;
@@ -818,7 +842,7 @@ p { margin: 0; }
     animation-delay: 0ms !important;
     transition-duration: 0.001ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .reveal { opacity: 1; transform: none; will-change: auto; }
   .stagger > * { opacity: 1; animation: none; }
 }
 
@@ -870,7 +894,11 @@ p { margin: 0; }
   margin-top: 5px;
 }
 
-/* Connector band between apps and packages */
+/* Connector band between apps and packages.
+   stroke-dashoffset can't be composited, so this repaints on the main
+   thread every frame it runs. It only runs while .is-live is on the
+   diagram — main.js adds that class while the diagram is on screen and
+   removes it when it scrolls away. */
 .arch__wires {
   height: 54px;
   display: block;
@@ -882,6 +910,8 @@ p { margin: 0; }
   stroke: var(--line);
   stroke-width: 1;
   stroke-dasharray: 3 4;
+}
+.arch.is-live .arch__wire {
   animation: drift 2.6s linear infinite;
 }
 @keyframes drift { to { stroke-dashoffset: -14; } }
@@ -982,7 +1012,10 @@ p { margin: 0; }
   width: 1px;
   background: var(--line);
 }
-.loop__step:last-child .loop__dot::after { display: none; }
+/* The spine stops at the stage that closes the circle. Not :last-child —
+   the last child of .loop is .loop__back, not a step, so that selector
+   never matched and the spine ran past the final stage. */
+.loop__step--return .loop__dot::after { display: none; }
 
 .loop__num {
   width: 42px;
@@ -1140,7 +1173,7 @@ p { margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .arch__wire { animation: none; }
+  .arch__wire, .arch.is-live .arch__wire { animation: none; }
   .seq > * { opacity: 1; transform: none; }
   .seq.is-in > * { animation: none; }
 }
