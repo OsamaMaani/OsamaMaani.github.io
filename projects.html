@@ -295,10 +295,14 @@
         </div>
       </div>
 
+      <!-- preserveAspectRatio="none" stretches this viewBox ~3.4x wide and 1x
+           tall. vector-effect keeps the stroke width and dash pattern in screen
+           space, so the wires don't smear horizontally and both engines draw
+           the same dashes. -->
       <svg class="arch__wires" viewBox="0 0 300 54" preserveAspectRatio="none" aria-hidden="true">
-        <path class="arch__wire" d="M50 54 C50 26, 150 28, 150 0" />
-        <path class="arch__wire" d="M150 54 L150 0" />
-        <path class="arch__wire" d="M250 54 C250 26, 150 28, 150 0" />
+        <path class="arch__wire" vector-effect="non-scaling-stroke" d="M50 54 C50 26, 150 28, 150 0" />
+        <path class="arch__wire" vector-effect="non-scaling-stroke" d="M150 54 L150 0" />
+        <path class="arch__wire" vector-effect="non-scaling-stroke" d="M250 54 C250 26, 150 28, 150 0" />
       </svg>
 
       <p class="arch__label">one shared foundation</p>
