@@ -276,57 +276,86 @@
     <div class="section__head reveal">
       <p class="eyebrow"><span>//</span> architecture</p>
       <h2>Fifteen apps don't get built fifteen times.</h2>
-      <p>
-        The reason this volume is possible at all is that almost none of it is
-        written twice. What follows is the part I'd actually want to talk about
-        in an interview.
+      <p>Shared code lives in packages. The apps bring their own identity.</p>
+    </div>
+
+    <div class="arch reveal">
+      <div class="arch__row">
+        <div class="arch__app" style="--brand:#FFB454">
+          <b>Passion Gym</b>
+          <span>own theme</span>
+        </div>
+        <div class="arch__app" style="--brand:#8B9BFF">
+          <b>Revolt</b>
+          <span>own theme</span>
+        </div>
+        <div class="arch__app" style="--brand:#9FE3C5">
+          <b>Techne</b>
+          <span>own theme</span>
+        </div>
+      </div>
+
+      <svg class="arch__wires" viewBox="0 0 300 54" preserveAspectRatio="none" aria-hidden="true">
+        <path class="arch__wire" d="M50 54 C50 26, 150 28, 150 0" />
+        <path class="arch__wire" d="M150 54 L150 0" />
+        <path class="arch__wire" d="M250 54 C250 26, 150 28, 150 0" />
+      </svg>
+
+      <p class="arch__label">one shared foundation</p>
+
+      <div class="arch__core">
+        <b>internal packages</b>
+        <ul class="arch__mods">
+          <li>networking</li>
+          <li>auth + token refresh</li>
+          <li>navigation</li>
+          <li>forms &amp; lists</li>
+          <li>financial flows</li>
+          <li>localization</li>
+          <li>DI contracts</li>
+        </ul>
+      </div>
+
+      <p class="arch__note">
+        No package knows what colour it is. Each app injects its own theme, so
+        the same widgets ship seven identities.
       </p>
     </div>
 
-    <div class="cards reveal">
-      <article class="card">
-        <p class="card__kicker">01</p>
-        <h3>Shared code lives in packages</h3>
+    <div class="cards reveal seq" style="margin-top:clamp(20px,2.6vw,28px)">
+      <article class="card" style="--n:0">
+        <p class="card__kicker">reuse</p>
+        <h3>Written once</h3>
         <p>
-          Anything more than one app needs — networking, auth and token refresh,
-          navigation scaffolding, form and list widgets, whole feature modules
-          like the financial flows — sits in internal packages rather than being
-          copied between projects. An app consumes what it needs and adds only
-          what makes it that product.
+          Networking, auth, navigation, widgets, whole feature modules — consumed
+          from packages, never copied between projects.
         </p>
       </article>
 
-      <article class="card">
-        <p class="card__kicker">02</p>
-        <h3>Theming stays anonymous</h3>
+      <article class="card" style="--n:1">
+        <p class="card__kicker">theming</p>
+        <h3>Anonymous by design</h3>
         <p>
-          No package knows what colour it is. Each app declares its own scheme,
-          typography, and assets; shared widgets resolve everything through the
-          theme they're handed at runtime. That's why seven branded apps built
-          from one codebase don't look related — and why a new brand is a
-          configuration, not a fork.
+          Colours, type, and assets are declared by the app and resolved at
+          runtime. A new brand is configuration, not a fork.
         </p>
       </article>
 
-      <article class="card">
-        <p class="card__kicker">03</p>
-        <h3>Localization built in from the start</h3>
+      <article class="card" style="--n:2">
+        <p class="card__kicker">i18n</p>
+        <h3>Localized from day one</h3>
         <p>
-          Strings live with the packages that own them, so adding a language is a
-          translation task rather than a code change. Arabic means the layout has
-          to mirror as well as translate, so the shared widgets were written
-          direction-aware rather than retrofitted later.
+          Strings live with the package that owns them, and layouts are
+          direction-aware — so Arabic mirrors, not just translates.
         </p>
       </article>
 
-      <article class="card">
-        <p class="card__kicker">04</p>
+      <article class="card" style="--n:3">
+        <p class="card__kicker">coupling</p>
         <h3>Dependencies point inward</h3>
         <p>
-          Shared pages don't reach for an app's specific state management. They
-          declare what they need as a contract, and each app injects its own
-          implementation through GetIt. That's what keeps a package reusable
-          instead of quietly coupling itself to whichever app it was born in.
+          Shared pages declare contracts; each app injects its own implementation
+          through GetIt. That's what stops a package marrying its host.
         </p>
       </article>
     </div>
@@ -336,63 +365,60 @@
   <section class="wrap section">
     <div class="section__head reveal">
       <p class="eyebrow"><span>//</span> how the work happens</p>
-      <h2>From a stakeholder conversation to a store listing.</h2>
-      <p>
-        I own more of this cycle than a typical mobile role. It runs end to end,
-        and the last step feeds back into the middle.
-      </p>
+      <h2>Requirement to store listing, then back again.</h2>
+      <p>I own more of this cycle than a typical mobile role — and it's a cycle, not a line.</p>
     </div>
 
-    <ol class="flow reveal">
-      <li class="stage">
-        <h4>Gather the requirement</h4>
-        <p>
-          Sit with the stakeholder — internally at Technia, and often directly
-          with the client for real estate work. Understand the business need
-          before the feature request, because what people ask for and what they
-          need are frequently different things.
-        </p>
+    <ol class="loop reveal">
+      <li class="loop__step">
+        <div class="loop__dot"><span class="loop__num">01</span></div>
+        <div class="loop__card">
+          <h4>Gather the requirement</h4>
+          <p>Stakeholders internally, clients directly for real estate. <em>What people ask for and what they need are often different things.</em></p>
+        </div>
       </li>
-      <li class="stage">
-        <h4>Turn it into structured work</h4>
-        <p>
-          Translate the conversation into concrete development tasks and a
-          technical approach, and agree the API contract with the backend team so
-          the shape of the data matches the shape of the screen.
-        </p>
+
+      <li class="loop__step">
+        <div class="loop__dot"><span class="loop__num">02</span></div>
+        <div class="loop__card">
+          <h4>Structure the work</h4>
+          <p>Turn it into concrete tasks, and agree the API contract with backend so the data matches the screen.</p>
+        </div>
       </li>
-      <li class="stage">
-        <h4>Design the UI/UX</h4>
-        <p>
-          Design the screens myself, using AI-assisted workflows and research into
-          how comparable products solve the same problem. The design adapts to the
-          business model — a B2B admin tool and a B2C member app get different
-          treatment.
-        </p>
+
+      <li class="loop__step">
+        <div class="loop__dot"><span class="loop__num">03</span></div>
+        <div class="loop__card">
+          <h4>Design the UI/UX</h4>
+          <p>Designed by me, using AI-assisted workflows and research. B2B admin tools and B2C member apps get different treatment.</p>
+        </div>
       </li>
-      <li class="stage">
-        <h4>Build it</h4>
-        <p>
-          Implement against the shared packages, adding to them when the feature
-          is general and keeping it in the app when it isn't. That judgement call
-          is most of what keeps the suite maintainable.
-        </p>
+
+      <li class="loop__step">
+        <div class="loop__dot"><span class="loop__num">04</span></div>
+        <div class="loop__card">
+          <h4>Build</h4>
+          <p>Against the shared packages — extending them when the feature is general, keeping it local when it isn't.</p>
+        </div>
       </li>
-      <li class="stage">
-        <h4>Launch</h4>
-        <p>
-          Through review and out to both stores — Google Play and the App Store,
-          including the store-side work that isn't code.
-        </p>
+
+      <li class="loop__step">
+        <div class="loop__dot"><span class="loop__num">05</span></div>
+        <div class="loop__card">
+          <h4>Launch</h4>
+          <p>Through review and out to both stores, including the parts that aren't code.</p>
+        </div>
       </li>
-      <li class="stage stage--loop">
-        <h4>Back to the client, and around again</h4>
-        <p>
-          Take bug reports and enhancement requests from the people actually using
-          it, triage them against the roadmap, and feed them back into the cycle.
-          Shipping is where the conversation restarts, not where it ends.
-        </p>
+
+      <li class="loop__step loop__step--return">
+        <div class="loop__dot"><span class="loop__num">↻</span></div>
+        <div class="loop__card">
+          <h4>Back to the client</h4>
+          <p>Bugs and enhancement requests from real users, triaged and fed back in. <em>Shipping restarts the conversation.</em></p>
+        </div>
       </li>
+
+      <li class="loop__back">returns to 01</li>
     </ol>
   </section>
 
@@ -401,62 +427,56 @@
     <div class="section__head reveal">
       <p class="eyebrow"><span>//</span> domain fluency</p>
       <h2>You can't build accounting software you don't understand.</h2>
-      <p>
-        Enterprise apps fail on domain misunderstandings more often than on
-        technical ones. Building across these areas meant learning the vocabulary
-        and the processes properly, so that a stakeholder conversation doesn't
-        need translating first.
-      </p>
+      <p>Enterprise apps fail on domain misunderstandings more often than technical ones. The vocabulary I work in:</p>
     </div>
 
-    <div class="glossary reveal">
-      <div>
+    <div class="domains reveal seq">
+      <div class="domain" style="--n:0">
         <h4>Sales</h4>
-        <p>
-          How a lead becomes an account, where a quotation sits relative to an
-          RFQ, how work orders and subscriptions carry through, and why a
-          representative's pipeline view differs from a manager's.
-        </p>
+        <ul class="terms">
+          <li>leads</li><li>accounts</li><li>quotations</li><li>RFQs</li>
+          <li>work orders</li><li>subscriptions</li><li>pipeline</li>
+        </ul>
       </div>
-      <div>
+
+      <div class="domain" style="--n:1">
         <h4>Accounting</h4>
-        <p>
-          Invoices against bills, credit notes against debit notes, customer and
-          vendor accounts, and the difference between recording a transaction and
-          reporting on it.
-        </p>
+        <ul class="terms">
+          <li>invoices</li><li>bills</li><li>credit notes</li><li>debit notes</li>
+          <li>customer accounts</li><li>vendor accounts</li>
+        </ul>
       </div>
-      <div>
+
+      <div class="domain" style="--n:2">
         <h4>Purchasing</h4>
-        <p>
-          Purchase requests against purchase orders, supplier records, approval
-          chains and who can release what, and where procurement touches
-          inventory.
-        </p>
+        <ul class="terms">
+          <li>purchase requests</li><li>purchase orders</li><li>suppliers</li>
+          <li>approval chains</li><li>inventory</li>
+        </ul>
       </div>
-      <div>
+
+      <div class="domain" style="--n:3">
         <h4>HR</h4>
-        <p>
-          Attendance and clocking rules, leave and request workflows, payroll
-          visibility, and why the employee-facing app and the admin-facing app
-          are two products rather than two permission levels.
-        </p>
+        <ul class="terms">
+          <li>attendance</li><li>clocking rules</li><li>leave</li>
+          <li>request workflows</li><li>payroll</li>
+        </ul>
       </div>
-      <div>
+
+      <div class="domain" style="--n:4">
         <h4>Real estate</h4>
-        <p>
-          Lead qualification, follow-up cadence, action logging, and how deals
-          move through stages — gathered largely from client meetings rather than
-          from a spec.
-        </p>
+        <ul class="terms">
+          <li>lead qualification</li><li>follow-ups</li><li>actions</li>
+          <li>deal stages</li>
+        </ul>
       </div>
-      <div>
+
+      <div class="domain" style="--n:5">
         <h4>Fitness</h4>
-        <p>
-          Packages against memberships against subscriptions, session counting,
-          coach scheduling, and gate access — the operational reality of running
-          a gym.
-        </p>
+        <ul class="terms">
+          <li>packages</li><li>memberships</li><li>subscriptions</li>
+          <li>session counting</li><li>gate access</li>
+        </ul>
       </div>
     </div>
   </section>
