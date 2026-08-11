@@ -35,7 +35,6 @@
 </header>
 
 <main id="main">
-
   <section class="wrap hero">
     <div class="stagger">
       <p class="eyebrow" style="--i:0"><span>//</span> projects</p>
@@ -44,8 +43,7 @@
         Most of this work is business software: dense forms, long lists, tricky
         permissions, and users who do the same task forty times a day. The
         interesting engineering is in what gets reused — one gym platform ships
-        as four differently branded apps, and every ERP product sits on the same
-        foundation.
+        as seven branded apps, and every ERP product sits on the same foundation.
       </p>
     </div>
   </section>
@@ -56,21 +54,43 @@
       <p class="eyebrow"><span>//</span> Technia · June 2024 – present</p>
       <h2>The Technia applications suite</h2>
       <p>
-        Six products built on shared infrastructure. Each one gets its own domain
-        model and workflows; none of them re-implements navigation, networking,
-        theming, or state plumbing.
+        Fifteen apps live on Google Play and the App Store, across three product
+        families. They share one foundation of internal packages — and none of
+        them looks like the others.
       </p>
     </div>
 
+    <h3 class="group-title reveal">ERP suite</h3>
+    <p class="group-note reveal">Business software for Technia's enterprise clients.</p>
+
     <div class="cards reveal">
       <article class="card">
-        <p class="card__kicker">HR</p>
+        <p class="card__kicker">HR · employee side</p>
         <h3>Technia ESS</h3>
-        <p>A legacy Flutter codebase refactored into scalable MVVM, then extended.</p>
+        <p>Employee self-service. A legacy Flutter codebase refactored into scalable MVVM, then extended.</p>
         <ul class="card__list">
-          <li>Attendance tracking and in-app clock in / clock out</li>
-          <li>Salary management</li>
+          <li>Attendance and in-app clock in / clock out</li>
+          <li>Salary and payslip access</li>
           <li>Request workflows end to end</li>
+        </ul>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.essapp" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6737152177" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">HR · admin side</p>
+        <h3>Technia HR</h3>
+        <p>The administrator counterpart to ESS, for the HR team rather than the workforce.</p>
+        <ul class="card__list">
+          <li>Approving and routing employee requests</li>
+          <li>Attendance oversight across the organisation</li>
+          <li>Payroll and org-level records</li>
+        </ul>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.hr" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6752538053" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </article>
 
@@ -83,38 +103,39 @@
           <li>Performance work on list rendering and state</li>
           <li>Requirements gathered direct from clients</li>
         </ul>
-      </article>
-
-      <article class="card">
-        <p class="card__kicker">Fitness</p>
-        <h3>Technia Gyms</h3>
-        <p>Built from scratch, architected so new membership products drop in cleanly.</p>
-        <ul class="card__list">
-          <li>Packages and services</li>
-          <li>Memberships and subscriptions</li>
-          <li>Shipped as Passion Gym on both stores</li>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.realestate" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6738188797" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </article>
 
       <article class="card">
         <p class="card__kicker">Sales</p>
         <h3>Technia Sales</h3>
-        <p>Reusable infrastructure carrying complex, modular sales workflows.</p>
+        <p>Reusable infrastructure carrying the full sales cycle, from first contact to fulfilment.</p>
         <ul class="card__list">
-          <li>Leads and accounts</li>
+          <li>Leads, accounts, and quotations</li>
           <li>Work order management</li>
           <li>Components shared back into the suite</li>
+        </ul>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.technia.sales" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6738189089" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </article>
 
       <article class="card">
         <p class="card__kicker">Finance</p>
         <h3>Technia Accounting</h3>
-        <p>Enterprise accounting where the data flow has to be exactly right.</p>
+        <p>Enterprise accounting, where the data flow has to be exactly right the first time.</p>
         <ul class="card__list">
-          <li>Financial records and transactions</li>
+          <li>Invoices, bills, credit and debit notes</li>
+          <li>Customer and vendor account management</li>
           <li>Structured reporting workflows</li>
-          <li>Validation close to the source</li>
+        </ul>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.accounting" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6755572286" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </article>
 
@@ -123,17 +144,321 @@
         <h3>Technia Purchasing</h3>
         <p>Supplier-facing procurement on the same clean architecture.</p>
         <ul class="card__list">
-          <li>Suppliers and purchase orders</li>
-          <li>Approval chains</li>
+          <li>Purchase requests and purchase orders</li>
+          <li>Supplier records and approval chains</li>
           <li>Inventory-related workflows</li>
+        </ul>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.purchasing" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6755929509" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </article>
     </div>
 
-    <ul class="chips reveal" style="margin-top:26px">
+    <h3 class="group-title reveal">Gym platform</h3>
+    <p class="group-note reveal">
+      Membership, scheduling, and coaching — built once, then delivered to
+      individual gyms as their own branded apps.
+    </p>
+
+    <div class="cards reveal">
+      <article class="card">
+        <p class="card__kicker">Fitness · platform</p>
+        <h3>Technia Gyms</h3>
+        <p>Built from scratch, architected so new membership products drop in cleanly.</p>
+        <ul class="card__list">
+          <li>Packages and services</li>
+          <li>Memberships and subscriptions</li>
+          <li>The base every branded gym app is built from</li>
+        </ul>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.gyms" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6739978803" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">Fitness · staff</p>
+        <h3>Technia Coach</h3>
+        <p>The trainer's side of the platform: sessions, attendance, and member progress.</p>
+        <ul class="card__list">
+          <li>Session scheduling and clocking</li>
+          <li>Member and package visibility</li>
+        </ul>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.coach" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6762382006" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+    </div>
+
+    <h3 class="group-title reveal">Branded client apps</h3>
+    <p class="group-note reveal">
+      Seven apps on shared packages, each with a distinct identity. The theme
+      isn't hardcoded anywhere in the package — every app defines its own colour
+      scheme, typography, and assets, and the shared widgets read whatever the
+      host app hands them. Same code underneath, seven brands on top.
+    </p>
+
+    <div class="cards reveal">
+      <article class="card">
+        <p class="card__kicker">Gym · branded</p>
+        <h3>Passion Gym</h3>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.passion" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6754241266" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">Gym · branded</p>
+        <h3>Revolt Fitness Gym</h3>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.revolt" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6757112341" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">Gym · branded</p>
+        <h3>Techne Gym</h3>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.techne" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6763278148" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">Gym · branded</p>
+        <h3>TFG Gym</h3>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.tfgapp" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6755055126" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">Consumer · branded</p>
+        <h3>Energz</h3>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.energz" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6751149545" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">Consumer · branded</p>
+        <h3>Mirroils</h3>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.mirroils" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6751147602" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">Consumer · branded</p>
+        <h3>La Détox</h3>
+        <ul class="proof">
+          <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.ladetox" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6770531957" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </article>
+    </div>
+
+    <ul class="chips reveal" style="margin-top:30px">
       <li>Flutter</li><li>Dart</li><li>MVVM</li><li>Cubit / Bloc</li><li>GetIt</li>
       <li>GoRouter</li><li>Dio</li><li>REST APIs</li><li>Firebase</li><li>Shorebird</li><li>Git</li>
     </ul>
+  </section>
+
+  <!-- Architecture -->
+  <section class="wrap section">
+    <div class="section__head reveal">
+      <p class="eyebrow"><span>//</span> architecture</p>
+      <h2>Fifteen apps don't get built fifteen times.</h2>
+      <p>
+        The reason this volume is possible at all is that almost none of it is
+        written twice. What follows is the part I'd actually want to talk about
+        in an interview.
+      </p>
+    </div>
+
+    <div class="cards reveal">
+      <article class="card">
+        <p class="card__kicker">01</p>
+        <h3>Shared code lives in packages</h3>
+        <p>
+          Anything more than one app needs — networking, auth and token refresh,
+          navigation scaffolding, form and list widgets, whole feature modules
+          like the financial flows — sits in internal packages rather than being
+          copied between projects. An app consumes what it needs and adds only
+          what makes it that product.
+        </p>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">02</p>
+        <h3>Theming stays anonymous</h3>
+        <p>
+          No package knows what colour it is. Each app declares its own scheme,
+          typography, and assets; shared widgets resolve everything through the
+          theme they're handed at runtime. That's why seven branded apps built
+          from one codebase don't look related — and why a new brand is a
+          configuration, not a fork.
+        </p>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">03</p>
+        <h3>Localization built in from the start</h3>
+        <p>
+          Strings live with the packages that own them, so adding a language is a
+          translation task rather than a code change. Arabic means the layout has
+          to mirror as well as translate, so the shared widgets were written
+          direction-aware rather than retrofitted later.
+        </p>
+      </article>
+
+      <article class="card">
+        <p class="card__kicker">04</p>
+        <h3>Dependencies point inward</h3>
+        <p>
+          Shared pages don't reach for an app's specific state management. They
+          declare what they need as a contract, and each app injects its own
+          implementation through GetIt. That's what keeps a package reusable
+          instead of quietly coupling itself to whichever app it was born in.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="wrap section">
+    <div class="section__head reveal">
+      <p class="eyebrow"><span>//</span> how the work happens</p>
+      <h2>From a stakeholder conversation to a store listing.</h2>
+      <p>
+        I own more of this cycle than a typical mobile role. It runs end to end,
+        and the last step feeds back into the middle.
+      </p>
+    </div>
+
+    <ol class="flow reveal">
+      <li class="stage">
+        <h4>Gather the requirement</h4>
+        <p>
+          Sit with the stakeholder — internally at Technia, and often directly
+          with the client for real estate work. Understand the business need
+          before the feature request, because what people ask for and what they
+          need are frequently different things.
+        </p>
+      </li>
+      <li class="stage">
+        <h4>Turn it into structured work</h4>
+        <p>
+          Translate the conversation into concrete development tasks and a
+          technical approach, and agree the API contract with the backend team so
+          the shape of the data matches the shape of the screen.
+        </p>
+      </li>
+      <li class="stage">
+        <h4>Design the UI/UX</h4>
+        <p>
+          Design the screens myself, using AI-assisted workflows and research into
+          how comparable products solve the same problem. The design adapts to the
+          business model — a B2B admin tool and a B2C member app get different
+          treatment.
+        </p>
+      </li>
+      <li class="stage">
+        <h4>Build it</h4>
+        <p>
+          Implement against the shared packages, adding to them when the feature
+          is general and keeping it in the app when it isn't. That judgement call
+          is most of what keeps the suite maintainable.
+        </p>
+      </li>
+      <li class="stage">
+        <h4>Launch</h4>
+        <p>
+          Through review and out to both stores — Google Play and the App Store,
+          including the store-side work that isn't code.
+        </p>
+      </li>
+      <li class="stage stage--loop">
+        <h4>Back to the client, and around again</h4>
+        <p>
+          Take bug reports and enhancement requests from the people actually using
+          it, triage them against the roadmap, and feed them back into the cycle.
+          Shipping is where the conversation restarts, not where it ends.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Domain -->
+  <section class="wrap section">
+    <div class="section__head reveal">
+      <p class="eyebrow"><span>//</span> domain fluency</p>
+      <h2>You can't build accounting software you don't understand.</h2>
+      <p>
+        Enterprise apps fail on domain misunderstandings more often than on
+        technical ones. Building across these areas meant learning the vocabulary
+        and the processes properly, so that a stakeholder conversation doesn't
+        need translating first.
+      </p>
+    </div>
+
+    <div class="glossary reveal">
+      <div>
+        <h4>Sales</h4>
+        <p>
+          How a lead becomes an account, where a quotation sits relative to an
+          RFQ, how work orders and subscriptions carry through, and why a
+          representative's pipeline view differs from a manager's.
+        </p>
+      </div>
+      <div>
+        <h4>Accounting</h4>
+        <p>
+          Invoices against bills, credit notes against debit notes, customer and
+          vendor accounts, and the difference between recording a transaction and
+          reporting on it.
+        </p>
+      </div>
+      <div>
+        <h4>Purchasing</h4>
+        <p>
+          Purchase requests against purchase orders, supplier records, approval
+          chains and who can release what, and where procurement touches
+          inventory.
+        </p>
+      </div>
+      <div>
+        <h4>HR</h4>
+        <p>
+          Attendance and clocking rules, leave and request workflows, payroll
+          visibility, and why the employee-facing app and the admin-facing app
+          are two products rather than two permission levels.
+        </p>
+      </div>
+      <div>
+        <h4>Real estate</h4>
+        <p>
+          Lead qualification, follow-up cadence, action logging, and how deals
+          move through stages — gathered largely from client meetings rather than
+          from a spec.
+        </p>
+      </div>
+      <div>
+        <h4>Fitness</h4>
+        <p>
+          Packages against memberships against subscriptions, session counting,
+          coach scheduling, and gate access — the operational reality of running
+          a gym.
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- Other projects -->
@@ -204,183 +529,6 @@
     </div>
   </section>
 
-  <!-- Published -->
-  <section class="wrap section">
-    <div class="section__head reveal">
-      <p class="eyebrow"><span>//</span> published</p>
-      <h2>Every app, live on both stores</h2>
-      <p>
-        Each of these went through review and out to real users. Three product
-        families came out of the same shared foundation.
-      </p>
-    </div>
-
-    <div class="reveal">
-
-      <h3 class="group-title">ERP suite</h3>
-      <p class="group-note">Business software for Technia's enterprise clients.</p>
-      <ul class="apps">
-        <li class="app">
-          <div>
-            <div class="app__name">Technia HR</div>
-            <div class="app__note">Attendance, salary, and request workflows</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.hr" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6752538053" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Technia ESS</div>
-            <div class="app__note">Employee self-service, refactored to MVVM</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.essapp" target="_blank" rel="noopener">Google Play</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Technia Sales</div>
-            <div class="app__note">Leads, accounts, and work orders</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.technia.sales" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6738189089" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Technia Accounting</div>
-            <div class="app__note">Financial records, transactions, reporting</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.accounting" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6755572286" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Technia Purchasing</div>
-            <div class="app__note">Suppliers, purchase orders, approvals</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.purchasing" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6755929509" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Technia Real Estate</div>
-            <div class="app__note">Leads, follow-ups, actions, and deals</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.realestate" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6738188797" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <h3 class="group-title">Gym platform</h3>
-      <p class="group-note">
-        One membership and scheduling system, then branded builds of it for
-        individual gyms — each with its own identity on the stores.
-      </p>
-      <ul class="apps">
-        <li class="app">
-          <div>
-            <div class="app__name">Technia Gyms</div>
-            <div class="app__note">The platform: packages, memberships, subscriptions</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.gyms" target="_blank" rel="noopener">Google Play</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Technia Coach</div>
-            <div class="app__note">Coach-side scheduling and clocking</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.coach" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6762382006" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Passion Gym</div>
-            <div class="app__note">Branded member app</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.passion" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6754241266" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Revolt Fitness Gym</div>
-            <div class="app__note">Branded member app</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.revolt" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6757112341" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Techne Gym</div>
-            <div class="app__note">Branded member app</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.techne" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6763278148" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">TFG Gym</div>
-            <div class="app__note">Branded member app</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://apps.apple.com/app/id6755055126" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <h3 class="group-title">Consumer brands</h3>
-      <p class="group-note">Customer-facing apps built on shared branded infrastructure.</p>
-      <ul class="apps">
-        <li class="app">
-          <div>
-            <div class="app__name">Energz</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.energz" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6751149545" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">Mirroils</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.mirroils" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6751147602" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-        <li class="app">
-          <div>
-            <div class="app__name">La Détox</div>
-          </div>
-          <ul class="proof">
-            <li><a href="https://play.google.com/store/apps/details?id=com.techniasolutions.ladetox" target="_blank" rel="noopener">Google Play</a></li>
-            <li><a href="https://apps.apple.com/app/id6770531957" target="_blank" rel="noopener">App Store</a></li>
-          </ul>
-        </li>
-      </ul>
-
-    </div>
-  </section>
 
   <section class="wrap contact reveal">
     <p class="eyebrow"><span>//</span> get in touch</p>
